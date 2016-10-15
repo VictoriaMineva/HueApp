@@ -1,2 +1,4 @@
 $ cat .gitattributes
 *.rb linguist-language=JavaScript
+special-vendored-path/* app/sass/vendor
+_normalize.scss linguist-vendored=false
