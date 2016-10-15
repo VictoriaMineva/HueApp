@@ -34,18 +34,18 @@
                 g /= maxValue;
                 b /= maxValue;
                 r = r * 255;
-                if (r < 0) { r = 255 };
+                if (r < 0) { r = 255; }
                 g = g * 255;
-                if (g < 0) { g = 255 };
+                if (g < 0) { g = 255; }
                 b = b * 255;
-                if (b < 0) { b = 255 };
+                if (b < 0) { b = 255; }
 
                 return "#" + colorFactory.toHex(r) + colorFactory.toHex(g) + colorFactory.toHex(b);
             };
 
             colorFactory.toHex = function(c) {
                 var hex = c.toString(16);
-                var result = hex.length == 1 ? "0" + hex : hex;
+                var result = hex.length === 1 ? "0" + hex : hex;
                 result = result.substring(0, 2);
                 return result;
             };

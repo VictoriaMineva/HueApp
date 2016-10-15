@@ -1,8 +1,8 @@
-<div ng-repeat="(key, data) in lights track by $index" " class="light-block ">
-	<h3 class="light-name ">{{data.name}}</h3>
-	<label class="switch ">
-		<input type="checkbox " ng-model="data.state.on " ng-change="changeState(key) ">
-		<div class="slider round "></div>
-	</label>
-	<div color-picker light="{{key}} " color="{{data.hex}} " item="lights " class="color-picker "></div>
+<div ng-repeat="(key, data) in lights track by $index" class="light-block">
+    <h3 class="light-name">{{data.name}}</h3>
+    <label class="switch">
+        <input type="checkbox" ng-model="data.state.on" ng-change="changeState(key)">
+        <div class="slider round"></div>
+    </label>
+    <div color-picker light="{{key}}" color="{{data.hex}}" item="lights" class="color-picker"></div>
 </div>

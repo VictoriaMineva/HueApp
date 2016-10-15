@@ -5,18 +5,23 @@
         .controller('hueLightController', function($scope, hueService, colorConvertService, $interval) {
 
             hueService.getLights().then(function(response) {
+                console.log(response);
                 $scope.lights = response.data;
                 for (var key in $scope.lights) {
-                    $scope.lights[key].lightColor = colorConvertService.xyBriToRgb($scope.lights[key].state.xy[0], $scope.lights[key].state.xy[1], $scope.lights[key].state.bri);
-                    $scope.lights[key].hex = $scope.lights[key].lightColor;
+                    if ($scope.lights.hasOwnProperty(key)) {
+                        $scope.lights[key].lightColor = colorConvertService.xyBriToRgb($scope.lights[key].state.xy[0], $scope.lights[key].state.xy[1], $scope.lights[key].state.bri);
+                        $scope.lights[key].hex = $scope.lights[key].lightColor;
+                    }
                 }
             });
 
             hueService.getGroups().then(function(response) {
                 $scope.groups = response.data;
                 for (var key in $scope.groups) {
-                    $scope.groups[key].lightColor = colorConvertService.xyBriToRgb($scope.groups[key].action.xy[0], $scope.groups[key].action.xy[1], $scope.groups[key].action.bri);
-                    $scope.groups[key].hex = $scope.groups[key].lightColor;
+                    if ($scope.groups.hasOwnProperty(key)) {
+                        $scope.groups[key].lightColor = colorConvertService.xyBriToRgb($scope.groups[key].action.xy[0], $scope.groups[key].action.xy[1], $scope.groups[key].action.bri);
+                        $scope.groups[key].hex = $scope.groups[key].lightColor;
+                    }
                 }
             });
 
@@ -39,7 +44,7 @@
                 } else {
                     $interval.cancel($scope.interval);
                 }
-            }
+            };
 
             $scope.stopLoop = function() {
                 $interval.cancel($scope.interval);
@@ -82,7 +87,7 @@
             function effect() {
                 var settings = { "hue": effectColor };
                 hueService.changeColor('lights', 1, settings);
-                if (effectColor == 0) {
+                if (effectColor === 0) {
                     effectColor = 46920;
                 } else {
                     effectColor = 0;
