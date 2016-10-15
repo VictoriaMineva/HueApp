@@ -1,0 +1,7 @@
+<h4 class="light-setting">Color:</h4>
+<input type="text" ng-style="colorInputStyle" class="light-color-input" ng-model="colorHex" ng-click="showColorPicker()">
+<i class="fa fa-pencil edit-icon" aria-hidden="true" ng-click="showColorPicker()"></i>
+<div ng-show="colorPickerVisible" class="color-picker-box">
+	<a href="" class="color-picker-close" ng-click="hideColorPicker()">X close</a>
+	<canvas width="300" height="300" ng-attr-id="{{canvasId}}" ng-mouseup="selectColor($event)"></canvas>
+</div>

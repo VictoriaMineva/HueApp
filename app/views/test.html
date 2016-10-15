@@ -1,0 +1,34 @@
+<div class="light-block">
+    <h3 class="light-name">Living room</h3>
+    <label class="switch">
+        <input type="checkbox" ng-model="data.state.on" ng-change="changeState(key)">
+        <div class="slider round"></div>
+    </label>
+    <h4 class="light-setting">Loop colors</h4>
+    <label class="switch">
+        <input type="checkbox" ng-model="test" ng-change="startLoop()">
+        <div class="slider round"></div>
+    </label>
+    <h4 class="light-setting">Brightness:</h4>
+    <input type="range" class="light-slider" ng-model="brightness" min="0" max="255" step="15" ng-change="adjustBrightness()">
+    <h4 class="light-setting">Saturation:</h4>
+    <input type="range" class="light-slider" ng-model="saturation" min="0" max="255" step="15" ng-change="adjustSaturation()">
+    <div color-picker light="{{5}}" color="{{hex}}" class="color-picker"></div>
+</div>
+<div class="light-block">
+    <h3 class="light-name">Hue light 1</h3>
+    <label class="switch">
+        <input type="checkbox" ng-model="data.state.on" ng-change="changeState(key)">
+        <div class="slider round"></div>
+    </label>
+    <h4 class="light-setting">Loop colors</h4>
+    <label class="switch">
+        <input type="checkbox" ng-model="test" ng-change="startLoop()">
+        <div class="slider round"></div>
+    </label>
+    <h4 class="light-setting">Brightness:</h4>
+    <input type="range" class="light-slider" ng-model="brightness" min="0" max="255" step="15" ng-change="adjustBrightness()">
+    <h4 class="light-setting">Saturation:</h4>
+    <input type="range" class="light-slider" ng-model="saturation" min="0" max="255" step="15" ng-change="adjustSaturation()">
+    <div color-picker light="{{4}}" color="{{hex}}" class="color-picker"></div>
+</div>

@@ -1,0 +1,17 @@
+<div class="light-block" ng-repeat="(key, data) in groups track by $index">
+    <h3 class="light-name">Living room</h3>
+    <label class="switch">
+        <input type="checkbox" ng-model="data.action.on" ng-change="changeGroupState(key, 'groups')">
+        <div class="slider round"></div>
+    </label>
+    <h4 class="light-setting">Loop colors</h4>
+    <label class="switch">
+        <input type="checkbox" ng-model="test" ng-change="startLoop()">
+        <div class="slider round"></div>
+    </label>
+    <h4 class="light-setting">Brightness:</h4>
+    <input type="range" class="light-slider" ng-model="data.action.bri" min="0" max="255" step="5" ng-mouseup="adjustBrightness(key)" ng-touchend="adjustBrightness(key)">
+    <h4 class="light-setting">Saturation:</h4>
+    <input type="range" class="light-slider" ng-model="data.action.sat" min="0" max="255" step="5" ng-mouseup="adjustSaturation(key)">
+    <div color-picker light="{{key}}" color="{{data.hex}}" item="groups" class="color-picker"></div>
+</div>

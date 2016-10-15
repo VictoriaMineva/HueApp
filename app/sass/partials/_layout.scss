@@ -1,0 +1,181 @@
+@import 'https://fonts.googleapis.com/css?family=Pacifico';
+@import 'https://fonts.googleapis.com/css?family=Amita:400,700|Roboto:300,400,500,700';
+body {
+    padding: 0;
+    color: #353c48;
+    background: #FFE584;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+header {
+    background-color: #7AC191;
+    box-shadow: 2px 2px 10px #888888;
+    margin: 0 0 20px 0;
+    padding: 20px;
+    font-family: 'Amita', cursive;
+    font-weight: 300;
+    h1 {
+        margin: 0;
+        display: inline-block;
+    }
+    a {
+        display: inline-block;
+        padding: 0 10px;
+        text-decoration: none;
+        color: #353c48;
+    }
+    nav {
+        float: right;
+        line-height: 62px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    h1 {
+        font-size: 28px;
+    }
+    nav {
+        a {
+            font-size: 18px;
+        }
+    }
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    /* Hides the slider so that custom slider can be made */
+    width: 200px;
+    /* Specific width is required for Firefox. */
+    background: transparent;
+    /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+    /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+@media screen and (max-width: 700px) {
+    input[type=range] {
+        -webkit-appearance: none;
+        /* Hides the slider so that custom slider can be made */
+        width: calc(100% - 20px);
+        /* Specific width is required for Firefox. */
+        background: transparent;
+        /* Otherwise white in Chrome */
+    }
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+    input[type=range]:focus {
+        outline: none;
+        /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+    }
+    input[type=range]::-ms-track {
+        width: calc(100% - 20px);
+        cursor: pointer;
+        /* Hides the slider so custom styles can be added */
+        background: transparent;
+        border-color: transparent;
+        color: transparent;
+    }
+}
+
+input[type=range]::-ms-track {
+    width: 200px;
+    cursor: pointer;
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+
+/* Special styling for WebKit/Blink */
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: #7AC191;
+    cursor: pointer;
+    margin-top: -10px;
+    /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+
+/* All the same stuff for Firefox */
+
+input[type=range]::-moz-range-thumb {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: #7AC191;
+    cursor: pointer;
+}
+
+
+/* All the same stuff for IE */
+
+input[type=range]::-ms-thumb {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background: #7AC191;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #353c48;
+    border-radius: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #353c48;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: #353c48;
+    border-radius: 3px;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #353c48;
+    border-radius: 3px;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #353c48;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #353c48;
+    border-radius: 3px;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #353c48;
+}
